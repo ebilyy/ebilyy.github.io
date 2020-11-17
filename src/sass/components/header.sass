@@ -1,0 +1,397 @@
+logo
+  display: flex
+  text-decoration: none
+  align-items: center
+
+  &__image
+    width: 40px
+    height: 40px
+
+.logo__text
+  color: white
+  font-weight: 700
+  font-size: 18px
+  line-height: 140%
+  padding-left: 11px
+.header
+  background-color: #151515
+  overflow: hidden
+  &.menu-open
+    overflow: visible
+
+  &.is-fixed
+    position: fixed
+    width: 100%
+    top: 0
+    left: 0
+    background-color: #151515
+    animation: show 0.3s ease forwards
+    opacity: 0
+    z-index: 100
+
+.header__inner
+  max-width: 1920px
+  margin: 0 auto
+  display: flex
+  padding: 17px 16px
+  justify-content: space-between
+  align-items: center
+  position: relative
+
+.header__menu
+  display: flex
+  width: 100%
+
+  
+.header__link-wrap
+  position: relative
+  z-index: 2
+  .header__submenu .header__link
+    +rh(800)
+      margin-bottom: 12px
+      &:last-child
+        margin-bottom: 0
+
+
+.header__link
+  display: inline-block
+  font-size: 28px
+  font-weight: 500
+  line-height: 40px
+  margin-bottom: 16px
+  color: #b8b8b8
+  text-decoration: none
+  white-space: nowrap
+  position: relative
+  overflow: hidden
+  transition: ease 0.2s all
+  &.is-active
+    color: #fff
+
+.header__link
+  +hover
+    color: #fff
+
+.header__link:after
+  content: ''
+  width: 100%
+  height: 2px
+  background-color: #28ca71
+  display: block
+  position: absolute
+  left: 0
+  bottom: 0px
+  transform: translate(-100%, 0)
+  opacity: 0
+  transition: ease 0.2s all
+
+.header__link
+  +hover
+    &::after
+      opacity: 1
+      transform: translate(0)
+
+
+.header__link-wrap:last-child
+  margin: 0
+
+.header__logo
+  z-index: 10
+
+.header__btn
+  display: inline-block
+  margin-right: 46px
+  z-index: 10
+
+.header-btn
+  background: #28ca71
+  color: #fff
+  padding: 16px
+  line-height: 1
+  font-size: 14px
+  font-weight: bold
+  text-decoration: none
+  white-space: nowrap
+  text-transform: uppercase
+  text-align: center
+
+.header__submenu
+  display: none
+  height: 0
+  min-width: 300px
+  opacity: 0
+  will-change: height
+  transition: ease 0.2s all
+
+  &.is-open
+    height: auto
+    opacity: 1
+    display: block
+
+.header__submenu-btn
+  position: absolute
+  right: 0
+  top: 14px
+
+.header__submenu
+  .header__link
+    font-size: 16px
+    margin-left: 16px
+    margin-bottom: 16px
+    line-height: 2
+    display: inline-block
+    margin-right: 50%
+    // +rh(900)
+    //   line-height: 1.5
+    //   margin-bottom: 10px
+
+
+.header__burger
+  display: none
+  margin-bottom: 28px
+  position: absolute
+  right: 16px
+  top: 32px
+
+.burger-btn
+  width: 36px
+  background: transparent
+  border: none
+  font-size: 0
+  outline: none
+  cursor: pointer
+
+.btn-collapse
+  position: relative
+  width: 14px
+  height: 14px
+  background: transparent
+  border: none
+  outline: none
+  z-index: 2
+
+.btn-collapse.is-open .btn-collapse__plus
+  opacity: 0
+
+.btn-collapse.is-open .btn-collapse__minus
+  background: #686868
+
+.btn-collapse__plus
+  position: absolute
+  top: 0
+  left: 7px
+  transform: translate(-50%, 0%)
+  width: 3px
+  height: 14px
+  background: #28ca71
+  pointer-events: none
+  transition: ease 0.2s all
+
+.btn-collapse__minus
+  position: absolute
+  top: 50%
+  left: 0
+  transform: translate(0, -50%)
+  width: 14px
+  height: 3px
+  background: #28ca71
+  pointer-events: none
+  transition: ease 0.2s all
+
+.header__submenu-btn
+  position: absolute
+  right: 0
+
+.header__menu-bg
+  position: absolute
+  background: rgba(#000, 0.8)
+  width: 100%
+  top: 104px
+  height: calc(100vh - 104px)
+  left: 0
+  transform: translate(100%, 0)
+  transition: ease 0.2s all
+
+.header__menu-bg.is-open
+  transform: translate(0)
+  background-color: #151515
+
+.burger-btn span
+  display: inline-block
+  width: 20px
+  height: 2px
+  background-color: #fff
+  margin-bottom: 3px
+  transition: ease 0.2s all
+
+.burger-btn span:last-child
+  margin-right: 0
+
+
+.burger-btn.is-open span:nth-child(1)
+  transform: rotate(45deg) translate(4px, 5px)
+
+.burger-btn.is-open span:nth-child(2)
+  opacity: 0
+
+.burger-btn.is-open span:nth-child(3)
+  transform: rotate(-45deg) translate(2px, -3px)
+
+
+.header__menu-links
+  display: block
+  position: absolute
+  width: 100%
+  top: 74px
+  left: 0
+  background-color: #151515
+  padding: 5px 24px
+  transform: translate(100%, 0)
+  transition: ease 0.2s all
+  z-index: 20
+
+.header__menu-links.is-open
+  transform: translate(0)
+  height: calc(100vh - 75px)
+  overflow-y: scroll
+  overflow-x: hidden
+  padding-top: 32px
+
+@keyframes show
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+
+// mobile media
+@media (max-width: 360px)
+  .logo__text
+    font-size: 14px
+    padding-left: 8px
+
+  .header-btn
+    font-size: 13px
+    padding: 14px
+
+  .header__btn
+    margin-right: 40px
+
+  .header__burger
+    right: 11px
+    top: 30px
+
+
+
+@media (min-width: 1024px)
+  .header-btn
+    width: 176px
+    line-height: 40px
+    padding: 0
+
+  .header__burger
+    top: 30px
+
+
+
+@media (min-width: 1170px)
+  .no-touch
+    .header
+      overflow: visible
+    .header__inner
+      padding: 24px 32px 0 32px
+
+    .header__btn
+      margin: 0 0 24px 32px
+
+    .header__menu-links
+      position: static
+      transform: translate(0)
+      background: transparent
+      display: flex
+      justify-content: space-between
+      // padding: 2px 0 0
+      padding: 0
+
+    .header__submenu
+      position: absolute
+      background-color: #1e1e1e
+      height: auto
+      padding: 40px 20px
+  
+    .header__link
+      margin-bottom: 0
+      font-size: 18px
+      line-height: 32px
+
+    .header__submenu .header__link
+      padding-left: 0
+      margin-bottom: 24px
+
+
+    .header__submenu-btn
+      display: none
+
+    .header__menu-bg
+      display: none
+
+    .header__menu
+      max-width: 80%
+      position: relative
+    .header__link-wrap
+      display: flex
+      // align-items: center
+    .header__link
+      align-self: center
+
+    .header__link-wrap,
+    .header__logo
+      margin-right: 35px
+      padding-bottom: 24px
+
+  .header__link-wrap
+    +hover
+      .header__submenu
+        display: block
+        transform: translate(-60px, 63px)
+        opacity: 1
+
+
+// media queries
+.touch 
+  .header__burger
+    display: block
+
+@media (max-width: 1169px)
+  .header__burger
+    display: block
+
+
+@media (min-width: 1279px)
+  .no-touch
+    .header__link-wrap
+      margin-right: 40px
+      +hover
+        .header__submenu
+          transform: translate(-40px, 20px)
+
+    .header__submenu
+      padding: 40px 44px 16px 44px
+    .header__logo
+      margin-right: 100px
+    .header__menu
+      max-width: calc(100% - 216px)
+
+@media (min-width: 1439px)
+  .no-touch
+    .header__logo
+      margin-right: 150px
+    .header__menu
+      max-width: calc(100% - 256px)
+
+@media (min-width: 1600px)
+  .no-touch
+    .header__inner
+      padding: 24px 112px 0 112px
+    .header__logo
+      margin-right: 240px

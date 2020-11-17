@@ -1,0 +1,12 @@
+{
+  "foo": "bar",
+  "title": "Some cool title",
+  "tests": [
+    {
+      "title": "Item1"
+    },
+    {
+      "title": "Item2"
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+
+  <header
+    class="header is-fixed js-header"
+  >
+    <div class="header__inner">
+      <nav class="header__menu menu">
+        <a href="/" class="logo header__logo">
+          <img class="logo__image " src="/logos/logo.svg" alt="mlsdev logo" />
+          <span class="logo__text">MLSDev</span>
+        </a>
+        <button
+          
+          class="header__burger burger-btn js-burger"
+          aria-label="show menu"
+          @click="toggleMenu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="header__menu-bg js-menu-bg" ></div>
+        <div class="header__menu-links js-menu-links" >
+          <div class="header__link-wrap">
+            <a class="header__link" href="/portfolio">
+              Portfolio
+            </a>
+          </div>
+          <div class="header__link-wrap">
+            <a class="header__link" href="/services">Services</a>
+            <button
+              class="header__submenu-btn btn-collapse"
+              aria-label="toggle submenu"
+              @click="toggleSubmenu($event, 'Services')"
+            >
+              <span class="btn-collapse__plus"></span>
+              <span class="btn-collapse__minus"></span>
+            </button>
+            <div ref="Services" class="header__submenu">
+              <a
+                class="header__link"
+                href="/services/custom-software-development"
+                >Custom software development</a
+              >
+              <a class="header__link" href="/services/web-development"
+                >Web application development</a
+              >
+              <a
+                class="header__link"
+                href="/services/mobile-app-development"
+                >Mobile app development</a
+              >
+              <a
+                class="header__link"
+                href="/services/dedicated-development-team"
+                >Dedicated development team</a
+              >
+              <a
+                class="header__link"
+                href="/services/it-staff-augmentation"
+                >Staff augmentation</a
+              >
+              <a class="header__link" href="/services/ui-ux-design"
+                >UI/UX design</a
+              >
+              <a class="header__link" href="/services/software-testing"
+                >Software testing & QA</a
+              >
+              <a class="header__link" href="/services/devops"
+                >DevOps</a
+              >
+              <a class="header__link" href="/services/business-analysis"
+                >Business analysis</a
+              >
+            </div>
+          </div>
+
+          <div class="header__link-wrap">
+            <a
+              class="header__link"
+              href="/software-development-solutions"
+            >
+              Industries
+            </a>
+            <button
+              class="header__submenu-btn btn-collapse"
+              @click="toggleSubmenu($event, 'Industries')"
+            >
+              <span class="btn-collapse__plus"></span>
+              <span class="btn-collapse__minus"></span>
+            </button>
+            <div ref="Industries" class="header__submenu">
+              <a class="header__link" href="/healthcare-app-developers">
+                Healthcare
+              </a>
+              <a
+                class="header__link"
+                href="/software-development-solutions#Economy"
+              >
+                On-Demand Economy
+              </a>
+              <a
+                class="header__link"
+                href="/software-development-solutions#Networking"
+              >
+                Social Networking
+              </a>
+              <a
+                class="header__link"
+                href="/software-development-solutions#Finance"
+              >
+                Finance
+              </a>
+              <a
+                class="header__link"
+                href="/software-development-solutions#Commerce"
+              >
+                E-Commerce
+              </a>
+              <a
+                class="header__link"
+                href="/software-development-solutions#Food"
+              >
+                Hospitality & Food
+              </a>
+              <a
+                class="header__link"
+                href="/software-development-solutions#Media"
+              >
+                Entertainment and Media
+              </a>
+              <a
+                class="header__link"
+                href="/software-development-solutions#Estate"
+              >
+                Real Estate
+              </a>
+              <a
+                class="header__link"
+                href="/software-development-solutions#Travel"
+              >
+                Travel
+              </a>
+              <a
+                class="header__link"
+                href="/software-development-solutions#Resources"
+              >
+                Human Resources
+              </a>
+              <a
+                class="header__link"
+                href="/software-development-solutions#Transportation"
+              >
+                Transportation
+              </a>
+            </div>
+          </div>
+          <div class="header__link-wrap">
+            <a class="header__link" href="/technologies"
+              >Technologies</a
+            >
+          </div>
+          <div class="header__link-wrap">
+            <a class="header__link" href="/company">Why MLSDev</a>
+          </div>
+          <div class="header__link-wrap">
+            <a class="header__link" href="/career">Career</a>
+          </div>
+          <div class="header__link-wrap">
+            <a class="header__link" href="/blog">Blog</a>
+          </div>
+        </div>
+      </nav>
+      <a href="/contact-us" class=" header__btn header-btn"
+        >Contact Us</a
+      >
+    </div>
+  </header>
